@@ -6,6 +6,10 @@ http.createServer((request, response) =>
 	const fs = require("fs");
 	let data = fs.readFileSync('provinces.json');
 	let traduit = JSON.parse(data);
-	
+	let trace = '<table>';
+	for (let p in traduit) { 
+		trace += '<tr><td>'+ p + '</td><td>' + traduit[p] + '</td></tr>'; 
+	}
+	trace += "</table>";
 	response.end(); 
 }).listen(3000);
