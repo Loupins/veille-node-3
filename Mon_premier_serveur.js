@@ -11,5 +11,6 @@ http.createServer((request, response) =>
 		trace += '<tr><td>'+ p + '</td><td>' + traduit[p] + '</td></tr>'; 
 	}
 	trace += "</table>";
+	response.write(trace);
 	response.end(); 
 }).listen(3000);
